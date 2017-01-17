@@ -1,0 +1,28 @@
+{% extends 'main.twig' %}
+
+{% block main %}
+    <table>
+        <tr>
+            <th><a href="?orderBy=Name">Name</a></th>
+            <th><a href="?orderBy=Code">Code</a></th>
+            <th><a href="?orderBy=Continent">Continent</a></th>
+            <th><a href="?orderBy=Region">Region</a></th>
+            <th><a href="?orderBy=Captial">Capital</a></th>
+            <th><a href="?orderBy=SurfaceArea">Surface Area</a></th>
+            <th><a href="?orderBy=Population">Population</a></th>
+        </tr>
+        {% for country in countries %}
+            <tr>
+                <td>{{ country.Name }}</td>
+                <td>{{ country.Code }}</td>
+                <td>{{ country.Continent }}</td>
+                <td>{{ country.Region }}</td>
+                <td>{{ country.Captial }}</td>
+                <td>{{ country.SurfaceArea }}</td>
+                <td>{{ country.Population }}</td>
+            </tr>
+        {%  else %}
+            No countries have been found.
+        {% endfor %}
+    </table>
+{% endblock %}
