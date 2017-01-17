@@ -4,7 +4,7 @@
     <table>
         <tr>
             <th><a href="?orderBy=Language">Language</a></th>
-            <th><a href="?orderBy=Country">Country</a></th>
+            <th><a href="?orderBy=CountryName">Country</a></th>
             <th><a href="?orderBy=Code">Country Code</a></th>
             <th><a href="?orderBy=IsOfficial">Is Official?</a></th>
             <th><a href="?orderBy=Percentage">Percentage</a></th>
@@ -12,13 +12,13 @@
         {% for language in languages %}
             <tr>
                 <td>{{ language.Language }}</td>
-                <td>{{ language.Country }}</td>
+                <td>{{ language.CountryName }}</td>
                 <td>{{ language.Code }}</td>
                 <td>{{ language.IsOfficial }}</td>
                 <td>{{ language.Percentage }}</td>
             </tr>
         {%  else %}
-            No cities have been found.
+            No languages have been found.
         {% endfor %}
     </table>
 {% endblock %}
