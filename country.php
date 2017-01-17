@@ -6,7 +6,8 @@
     $db = new PDO('mysql:host=localhost;dbname=world;charset=utf8mb4', 'root', '');
 
     if (isset($_GET["continent"])) {
-        $stmt = $db->prepare('SELECT * FROM country JOIN city ON country.Capital = city.ID WHERE Continent = ?');
+        $stmt = $db->prepare('SELECT country.Name, country.Code, country.Continent, country.Region, city.Name AS Capital, country.SurfaceArea, country.Population
+            FROM country JOIN city ON country.Capital = city.ID WHERE Continent = ?');
         $stmt->execute([$_GET['continent']]);
     }
     else {
