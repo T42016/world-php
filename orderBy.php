@@ -12,11 +12,11 @@ class orderBy
             case 'CountryName':
             case 'District':
             case 'Language':
+            case 'IsOfficial':
                 return 'ORDER BY '.$in.' ASC';
                 break;
             case 'SurfaceArea':
             case 'Population':
-            case 'IsOfficial':
             case 'Percentage':
                 return 'ORDER BY '.$in.' DESC';
                 break;
