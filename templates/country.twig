@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+<body>
+
+{% for country in countrys %}
+    * {{ country.Name }} <a href="lander.php?c={{ country.Continent }}">{{ country.Continent }}</a> {{ country.Population }} <br/>
+{% else %}
+    No countrys have been found.
+{% endfor %}
+
+</body>
+</html>

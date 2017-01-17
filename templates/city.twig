@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+<body>
+
+{% for city in cities %}
+    * {{ city.Name }} <a href = "Stader.php?code={{ city.CountryCode }}">{{ city.CountryCode }} </a> {{ city.Population }} <br/>
+{% else %}
+    No cities have been found.
+{% endfor %}
+
+</body>
+</html>

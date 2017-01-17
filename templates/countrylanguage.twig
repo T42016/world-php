@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+<body>
+
+{% for countrylanguage in languages %}
+    * {{ countrylanguage.Language }} <br/>
+{% else %}
+    No languages have been found.
+{% endfor %}
+
+</body>
+</html>
