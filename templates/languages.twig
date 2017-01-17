@@ -1,0 +1,9 @@
+{%extends "index.twig"%}
+{%block th%}
+<th><a href="languages.php?sort=Language">Language</a></th>
+{%endblock th%}
+{% block loop%}
+	<tr>
+		<td><a href="languages.php?code={{country.CountryCode}}">{{country.Language}}</a></td>
+	</tr>
+	{% endblock%}

@@ -1,0 +1,11 @@
+{%extends "index.twig"%}
+{%block th%}
+<th><a href="cities.php?sort=Name">City</a></th>
+<th><a href="cities.php?sort=Population">population</a></th>
+<th><a href="cities.php?sort=Countrycode">CountryCode</a></th>
+{%endblock%}
+{% block loop%}
+	<tr>
+		<td>{{country.Name}}</td> <td>{{country.Population}}</td> <td><a href="cities.php?code={{country.CountryCode}}">{{country.CountryCode}}</a></td>
+	</tr>
+	{% endblock %}
