@@ -54,3 +54,6 @@ fabric.properties
 # *.ipr
 
 # End of https://www.gitignore.io/api/phpstorm
+
+# Ignore for composer directories
+vendor
