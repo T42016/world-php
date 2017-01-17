@@ -1,7 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Rune Anderberg T4
- * Date: 2017-01-17
- * Time: 14:23
- */
+    require_once('orderBy.php');
+    require __DIR__.'/vendor/autoload.php';
+    $loader = new Twig_Loader_Filesystem(__DIR__.'/templates');
+    $twig = new Twig_Environment($loader, array('debug' => true));
+
+    echo $twig->render('top20.twig');
+?>

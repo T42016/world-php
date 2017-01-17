@@ -12,8 +12,8 @@
         {% for language in languages %}
             <tr>
                 <td>{{ language.Language }}</td>
-                <td>{{ language.CountryName }}</td>
-                <td>{{ language.Code }}</td>
+                <td><a href="?code={{ language.Code }}">{{ language.CountryName }}</a></td>
+                <td><a href="?code={{ language.Code }}">{{ language.Code }}</a></td>
                 <td>{{ language.IsOfficial }}</td>
                 <td>{{ language.Percentage }}</td>
             </tr>
