@@ -10,7 +10,8 @@
         $stmt->execute([$_GET['continent']]);
     }
     else {
-        $stmt = $db->prepare('SELECT * FROM country JOIN city ON country.Capital = city.ID');
+        $stmt = $db->prepare('SELECT country.Name, country.Code, country.Continent, country.Region, city.Name AS Capital, country.SurfaceArea, country.Population
+            FROM country JOIN city ON country.Capital = city.ID');
         $stmt->execute();
     }
 

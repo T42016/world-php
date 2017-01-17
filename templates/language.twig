@@ -1,1 +1,24 @@
 {% extends 'main.twig' %}
+
+{% block main %}
+    <table>
+        <tr>
+            <th><a href="?orderBy=Language">Language</a></th>
+            <th><a href="?orderBy=Country"></a>Country</th>
+            <th><a href="?orderBy=Code">Country Code</a></th>
+            <th><a href="?orderBy=IsOfficial">Is Official?</a></th>
+            <th><a href="?orderBy=Percentage">Percentage</a></th>
+        </tr>
+        {% for language in languages %}
+            <tr>
+                <td>{{ language.Language }}</td>
+                <td>{{ language.Country }}</td>
+                <td>{{ language.Code }}</td>
+                <td>{{ language.IsOfficial }}</td>
+                <td>{{ language.Percentage }}</td>
+            </tr>
+        {%  else %}
+            No cities have been found.
+        {% endfor %}
+    </table>
+{% endblock %}
