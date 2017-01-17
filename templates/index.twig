@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<link rel="stylesheet" type="text/css" href="styles/style.css">
+	</head>
+<body>
+	<table class="rainbow">
+		<tr>
+			<th>City</th>
+			<th>Population</th>
+			{% for city in cities %}
+			<tr>
+				<td>
+					{{city.Name}}
+				</td>
+				<td>
+					{{city.Population}}
+				</td>
+			</tr>
+			{% else %}
+			<tr>
+				<td>
+					null
+				</td>
+				<td>
+					null
+				</td>
+			</tr>
+			{% endfor %}
+		</tr>
+		</table>
+</body>
+</html>
