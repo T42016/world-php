@@ -18,6 +18,7 @@ class orderBy
             case 'SurfaceArea':
             case 'Population':
             case 'Percentage':
+            case 'Speakers':
                 return 'ORDER BY '.$in.' DESC';
                 break;
             default:

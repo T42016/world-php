@@ -9,6 +9,7 @@
                 <th><a href="?orderBy=Code">Country Code</a></th>
                 <th><a href="?orderBy=IsOfficial">Is Official?</a></th>
                 <th><a href="?orderBy=Percentage">Percentage</a></th>
+                <th><a href="?orderBy=Speakers">Speakers</a></th>
             </tr>
         </thead>
         <tbody>
@@ -19,6 +20,7 @@
                     <td><a href="?code={{ language.Code }}">{{ language.Code }}</a></td>
                     <td>{{ language.IsOfficial }}</td>
                     <td>{{ language.Percentage }}</td>
+                    <td>{{ language.Speakers }}</td>
                 </tr>
             {%  else %}
                 No languages have been found.

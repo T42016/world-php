@@ -8,22 +8,22 @@
     $db = new PDO('mysql:host=localhost;dbname=world;charset=utf8mb4', 'root', '');
 
     if (isset($_GET['orderBy']) && isset($_GET['code'])) {
-        $stmt = $db->prepare('SELECT countrylanguage.Language, country.Name AS CountryName, country.Code AS Code, countryLanguage.IsOfficial, countrylanguage.Percentage
+        $stmt = $db->prepare('SELECT countrylanguage.Language, country.Name AS CountryName, country.Code AS Code, countryLanguage.IsOfficial, countrylanguage.Percentage, ROUND(country.Population*(countrylanguage.Percentage/100)) AS Speakers
             FROM countrylanguage JOIN country ON countrylanguage.CountryCode = country.Code WHERE countrylanguage.CountryCode = ? '.orderBy::GetOrderBy($_GET['orderBy']));
         $stmt->execute([$_GET['code']]);
     }
     else if (isset($_GET['code'])) {
-        $stmt = $db->prepare('SELECT countrylanguage.Language, country.Name AS CountryName, country.Code AS Code, countryLanguage.IsOfficial, countrylanguage.Percentage
+        $stmt = $db->prepare('SELECT countrylanguage.Language, country.Name AS CountryName, country.Code AS Code, countryLanguage.IsOfficial, countrylanguage.Percentage, ROUND(country.Population*(countrylanguage.Percentage/100)) AS Speakers
             FROM countrylanguage JOIN country ON countrylanguage.CountryCode = country.Code WHERE countrylanguage.CountryCode = ?');
         $stmt->execute([$_GET['code']]);
     }
     else if (isset($_GET['orderBy'])) {
-        $stmt = $db->prepare('SELECT countrylanguage.Language, country.Name AS CountryName, country.Code AS Code, countryLanguage.IsOfficial, countrylanguage.Percentage
+        $stmt = $db->prepare('SELECT countrylanguage.Language, country.Name AS CountryName, country.Code AS Code, countryLanguage.IsOfficial, countrylanguage.Percentage, ROUND(country.Population*(countrylanguage.Percentage/100)) AS Speakers
             FROM countrylanguage JOIN country ON countrylanguage.CountryCode = country.Code '.orderBy::GetOrderBy($_GET['orderBy']));
         $stmt->execute([$_GET['orderBy']]);
     }
     else {
-        $stmt = $db->prepare('SELECT countrylanguage.Language, country.Name AS CountryName, country.Code AS Code, countryLanguage.IsOfficial, countrylanguage.Percentage
+        $stmt = $db->prepare('SELECT countrylanguage.Language, country.Name AS CountryName, country.Code AS Code, countryLanguage.IsOfficial, countrylanguage.Percentage, ROUND(country.Population*(countrylanguage.Percentage/100)) AS Speakers
             FROM countrylanguage JOIN country ON countrylanguage.CountryCode = country.Code');
         $stmt->execute();
     }
