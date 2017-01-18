@@ -1,33 +1,27 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
     <head>
+		<title>Page Title</title>
+		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="styles/style.css">
 	</head>
 <body>
-	<table class="rainbow">
-		<tr>
-			<th>City</th>
-			<th>Population</th>
-			{% for city in cities %}
-			<tr>
-				<td>
-					{{city.Name}}
-				</td>
-				<td>
-					{{city.Population}}
-				</td>
-			</tr>
-			{% else %}
-			<tr>
-				<td>
-					null
-				</td>
-				<td>
-					null
-				</td>
-			</tr>
-			{% endfor %}
-		</tr>
-		</table>
+	<div class="button-container">
+		<a href="php/countries.php">
+			<div class="link left">
+				<p>Countries</p>
+			</div>
+		</a>
+		<a href="php/cities.php">
+			<div class="link center">
+				<p>Cities</p>
+			</div>
+		</a>
+		<a href="php/languages.php">
+			<div class="link right">
+				<p>Languages</p>
+			</div>
+		</a>
+	</div>
 </body>
 </html>

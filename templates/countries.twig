@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+		<title>Countries</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../styles/style.css">
+	</head>
+<body>
+	<table>
+		<tr>
+			<th>Country</th>
+			<th>Continent</th>
+			<th>Primary Language</th>
+			<th>Population</th>
+			{% for country in countries %}
+			<tr>
+				<td>
+					{{country.Name}}
+				</td>
+				<td>
+				<a href="countries.php?continent={{country.Continent}}">
+					{{country.Continent}}
+					</a>
+				</td>
+				<td>
+				<a href="languages.php?countrycode={{country.Code}}">
+					{{country.Language}}
+					</a>
+				</td>
+				<td>
+					{{country.Population}}
+				</td>
+			</tr>
+			{% else %}
+			<tr>
+				<td>
+					null
+				</td>
+				<td>
+					null
+				</td>
+				<td>
+					null
+				</td>
+				<td>
+					null
+				</td>
+			</tr>
+			{% endfor %}
+		</tr>
+		</table>
+</body>
+</html>

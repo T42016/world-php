@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+		<title>Languages</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../styles/style.css">
+	</head>
+<body>
+	<table>
+		<tr>
+			<th>Languages</th>
+			{% for language in languages %}
+			<tr>
+				<td>
+					<a href="languages.php?countrycode={{language.countrycode}}">
+						{{language.language}}
+					</a>
+				</td>
+			</tr>
+			{% else %}
+			<tr>
+				<td>
+					null
+				</td>
+			</tr>
+			{% endfor %}
+		</tr>
+		</table>
+</body>
+</html>

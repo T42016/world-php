@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+		<title>Cities</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../styles/style.css">
+	</head>
+<body>
+	<table>
+		<tr>
+			<th>City</th>
+			<th>Country Code</th>
+			<th>Population</th>
+			{% for city in cities %}
+			<tr>
+				<td>
+					{{city.Name}}
+				</td>
+				<td>
+				<a href="cities.php?countrycode={{city.CountryCode}}">
+					{{city.CountryCode}}
+					</a>
+				</td>
+				<td>
+					{{city.Population}}
+				</td>
+			</tr>
+			{% else %}
+			<tr>
+				<td>
+					null
+				</td>
+				<td>
+					null
+				</td>
+				<td>
+					null
+				</td>
+			</tr>
+			{% endfor %}
+		</tr>
+		</table>
+</body>
+</html>
