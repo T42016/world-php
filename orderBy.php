@@ -21,6 +21,9 @@ class orderBy
             case 'Speakers':
                 return 'ORDER BY '.$in.' DESC';
                 break;
+            case 'TotalSpeakers':
+                return 'ORDER BY SUM(population*(Percentage/100)) DESC';
+                break;
             default:
                 return '';
         }
