@@ -1,24 +1,28 @@
 {% extends 'main.twig' %}
 
 {% block main %}
-    <table>
-        <tr>
-            <th><a href="?orderBy=Language">Language</a></th>
-            <th><a href="?orderBy=CountryName">Country</a></th>
-            <th><a href="?orderBy=Code">Country Code</a></th>
-            <th><a href="?orderBy=IsOfficial">Is Official?</a></th>
-            <th><a href="?orderBy=Percentage">Percentage</a></th>
-        </tr>
-        {% for language in languages %}
+    <table class="table table-striped table-bordered table-hover table-sm table-responsive">
+        <thead class="thead-inverse">
             <tr>
-                <td>{{ language.Language }}</td>
-                <td><a href="?code={{ language.Code }}">{{ language.CountryName }}</a></td>
-                <td><a href="?code={{ language.Code }}">{{ language.Code }}</a></td>
-                <td>{{ language.IsOfficial }}</td>
-                <td>{{ language.Percentage }}</td>
+                <th><a href="?orderBy=Language">Language</a></th>
+                <th><a href="?orderBy=CountryName">Country</a></th>
+                <th><a href="?orderBy=Code">Country Code</a></th>
+                <th><a href="?orderBy=IsOfficial">Is Official?</a></th>
+                <th><a href="?orderBy=Percentage">Percentage</a></th>
             </tr>
-        {%  else %}
-            No languages have been found.
-        {% endfor %}
+        </thead>
+        <tbody>
+            {% for language in languages %}
+                <tr>
+                    <td>{{ language.Language }}</td>
+                    <td><a href="?code={{ language.Code }}">{{ language.CountryName }}</a></td>
+                    <td><a href="?code={{ language.Code }}">{{ language.Code }}</a></td>
+                    <td>{{ language.IsOfficial }}</td>
+                    <td>{{ language.Percentage }}</td>
+                </tr>
+            {%  else %}
+                No languages have been found.
+            {% endfor %}
+        </tbody>
     </table>
 {% endblock %}

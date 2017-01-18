@@ -1,24 +1,28 @@
 {% extends 'main.twig' %}
 
 {% block main %}
-    <table>
-        <tr>
-            <th><a href="?orderBy=Name">Name</a></th>
-            <th><a href="?orderBy=CountryName">Country</a></th>
-            <th><a href="?orderBy=Code">Country Code</a></th>
-            <th><a href="?orderBy=District">District</a></th>
-            <th><a href="?orderBy=Population">Population</a></th>
-        </tr>
-        {% for city in cities %}
+    <table class="table table-striped table-bordered table-hover table-sm table-responsive">
+        <thead class="thead-inverse">
             <tr>
-                <td>{{ city.Name }}</td>
-                <td><a href="?code={{ city.CountryCode }}">{{ city.CountryName }}</a></td>
-                <td><a href="?code={{ city.CountryCode }}">{{ city.CountryCode }}</a></td>
-                <td>{{ city.District }}</td>
-                <td>{{ city.Population }}</td>
+                <th><a href="?orderBy=Name">Name</a></th>
+                <th><a href="?orderBy=CountryName">Country</a></th>
+                <th><a href="?orderBy=Code">Country Code</a></th>
+                <th><a href="?orderBy=District">District</a></th>
+                <th><a href="?orderBy=Population">Population</a></th>
             </tr>
-        {%  else %}
-            No cities have been found.
-        {% endfor %}
+        </thead>
+        <tbody>
+            {% for city in cities %}
+                <tr>
+                    <td>{{ city.Name }}</td>
+                    <td><a href="?code={{ city.CountryCode }}">{{ city.CountryName }}</a></td>
+                    <td><a href="?code={{ city.CountryCode }}">{{ city.CountryCode }}</a></td>
+                    <td>{{ city.District }}</td>
+                    <td>{{ city.Population }}</td>
+                </tr>
+            {%  else %}
+                No cities have been found.
+            {% endfor %}
+        </tbody>
     </table>
 {% endblock %}
