@@ -2,3 +2,7 @@ main {
     margin-top: 50px;
     padding: 20px;
 }
+
+th {
+    color: black;
+}
