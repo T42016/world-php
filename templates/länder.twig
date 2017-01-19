@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+<body>
+
+{% for city in cities %}
+1 {{ city.Name }} {{ city.Population }} <br/>
+{% else %}
+No cities have been found.
+{% endfor %}
+
+</body>
+</html>
