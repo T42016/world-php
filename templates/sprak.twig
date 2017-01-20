@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+<body>
+
+{% for countrylanguage in language %}
+1 {{ countrylanguage.Language }} {{ countrylanguage.Percentage }} <br/>
+{% else %}
+No language have been found.
+{% endfor %}
+
+</body>
+</html>

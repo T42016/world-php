@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+<body>
+
+{% for country in countries %}
+1 {{ country.Population }} {{ country.Name }} {{ country.SurfaceArea }}<br/>
+{% else %}
+No countries have been found.
+{% endfor %}
+
+</body>
+</html>

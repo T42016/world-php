@@ -2,18 +2,18 @@
 
 require __DIR__ . '/vendor/autoload.php';
 $loader = new Twig_Loader_Filesystem(__DIR__ . '/templates');
-$twig = new Twig_Environment($loader, array('cache' => __DIR__ .'/cache',));
+$twig = new Twig_Environment($loader, array('cache' => __DIR__ .'/cache', debug => true));
 
 	$pdo = new PDO('mysql:host=localhost;dbname=world;charset=utf8mb4', 'root', '');
 	
 	if(isset($_GET['code']))
 	{
-		$stmt = $pdo->prepare('SELECT * FROM city WHERE CountryCode = ?');
+		$stmt = $pdo->prepare('SELECT * FROM country WHERE CountryCode = ?');
 		$stmt->execute([$_GET['code']]);
 	}
 	else 
 	{
-		$stmt = $pdo->prepare('SELECT * FROM city');
+		$stmt = $pdo->prepare('SELECT * FROM country');
 		$stmt->execute();
 	}
 	/*try {
@@ -25,6 +25,6 @@ $twig = new Twig_Environment($loader, array('cache' => __DIR__ .'/cache',));
 		echo "ERROR!";
 	}*/
 	
-	echo $twig->render('city.twig', array('cities' => $stmt->fetchAll(),));
+	echo $twig->render('lander.twig', array('countries' => $stmt->fetchAll(),));
 
 ?>

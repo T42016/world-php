@@ -25,6 +25,6 @@ $twig = new Twig_Environment($loader, array('cache' => __DIR__ .'/cache',));
 		echo "ERROR!";
 	}*/
 	
-	echo $twig->render('city.twig', array('cities' => $stmt->fetchAll(),));
+	echo $twig->render('stader.twig', array('cities' => $stmt->fetchAll(),));
 
 ?>
